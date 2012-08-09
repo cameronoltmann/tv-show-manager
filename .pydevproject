@@ -7,5 +7,6 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/tv-show-manager</path>
 <path>/tv-show-manager/src</path>
+<path>/tv-show-manager/test</path>
 </pydev_pathproperty>
 </pydev_project>
