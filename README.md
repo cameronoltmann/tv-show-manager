@@ -4,7 +4,8 @@ tv-show-manager
 TV Episode Manager - Manages downloaded TV episodes, keeping the best/highest quality copy of each episode
 
 Inventory of concepts:
-* Media directory / home
+* Config file - implemented
+* Media directory / home - implemented
 * Folder structure
 * Series
 * Episodes
