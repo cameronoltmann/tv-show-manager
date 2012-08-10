@@ -16,7 +16,7 @@ class Settings(object):
     default_section = 'Main'
     defaults = {default_section:
                     {'Home' : '.',
-                     'Ext' : '.avi .mpg .mkv'
+                     'Ext' : '.avi .mpg .mkv .mp4'
                      }
                 }
 
