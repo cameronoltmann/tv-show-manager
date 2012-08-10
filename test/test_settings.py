@@ -14,4 +14,5 @@ class TestSettings(object):
         self.settings.set(setting, val, section)
         self.settings.save()
         self.settings.load()
-        assert self.settings._config.get(section, setting) == val
+        assert self.settings.get(setting, section) == val
+        assert self.settings.get('NoSection', 'NoSetting') == None
