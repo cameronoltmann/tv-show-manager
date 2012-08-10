@@ -6,18 +6,18 @@ TV Episode Manager - Manages downloaded TV episodes, keeping the best/highest qu
 Inventory of concepts:
 * Config file - implemented
 * Media directory / home - implemented
-* Folder structure
-* Series
-* Episodes
+* Folder structure - implemented
+* Series - implemented
+* Episodes - implemented
 * Repacks/Propers
 * Resolutions (hdtv/720p/etc)
-* Naming conventions
+* Naming conventions - crudely implemented
 
 Basic operation:
-* Navigate tree
-* Iterate through files
-* Collect series names and episode numbers
-* For any episodes with more than one file:
+* Navigate tree - implemented
+* Iterate through files - implemented
+* Collect series names and episode numbers - implemented
+* For any episodes with more than one file:- identified
   * Prefer higher res
   * Within a resolution:
     * Prefer proper/repack
