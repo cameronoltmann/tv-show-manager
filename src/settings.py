@@ -16,6 +16,9 @@ class Settings(object):
     default_section = 'Main'
     defaults = {default_section:
                     {'Home' : '.',
+                     'Graveyard' : './_graveyard',
+                     'Logging' : 'True',
+                     'Logfile' : 'actions.log',
                      'Ext' : '.avi .mpg .mkv .mp4'
                      }
                 }
@@ -52,7 +55,16 @@ class Settings(object):
         if self._config.has_option(section, setting):
             return self._config.get(section, setting)
         return None
-    
+
+    def get_bool(self, setting, section = default_section):
+        '''
+        Fetch a setting as a boolean value, choosing default section if unspecified
+        - quality of life function
+        '''
+        if self._config.has_option(section, setting):
+            return self._config.getboolean(section, setting)
+        return None
+
     def set(self, setting, val, section = default_section):
         '''
         Set an option, choosing default section if unspecified

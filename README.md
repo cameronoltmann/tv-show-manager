@@ -9,8 +9,8 @@ Inventory of concepts:
 * Folder structure - implemented
 * Series - implemented
 * Episodes - implemented
-* Repacks/Propers
-* Resolutions (hdtv/720p/etc)
+* Repacks/Propers - implemented
+* Resolutions (hdtv/720p/etc) - implemented
 * Naming conventions - crudely implemented
 
 Basic operation:
@@ -18,9 +18,9 @@ Basic operation:
 * Iterate through files - implemented
 * Collect series names and episode numbers - implemented
 * For any episodes with more than one file:- identified
-  * Prefer higher res
+  * Prefer higher res - implemented
   * Within a resolution:
-    * Prefer proper/repack
-* Move obsolete files to junkyard
+    * Prefer proper/repack - implemented
+* Move obsolete files to junkyard - implemented
 * After certain time, delete from graveyard
 
