@@ -15,15 +15,11 @@ class Settings(object):
     '''
     default_section = 'Main'
     defaults = {default_section:
-                    {'Home' : '.',
-                     'Graveyard' : './_graveyard',
-                     'Logging' : 'True',
-                     'Logfile' : 'actions.log',
-                     'Ext' : '.avi .mpg .mkv .mp4'
+                    {'Option' : 'Setting'
                      }
                 }
 
-    def __init__(self, configfile='settings.cfg', default_section = None):
+    def __init__(self, defaults = None, configfile='settings.cfg', default_section = None):
         '''
         Constructor
         * Set config filename instance variable
@@ -32,20 +28,25 @@ class Settings(object):
         '''
         if not default_section:
             default_section = Settings.default_section
+        if not defaults:
+            defaults = Settings.defaults
+        self._defaults = defaults
         self._configfile=configfile
         self._config = ConfigParser.SafeConfigParser()
         self._config.read(self._configfile)
         self._default_section = default_section
-        self.set_missing_defaults()
+        self.set_missing_defaults(defaults)
 
-    def set_missing_defaults(self):
+    def set_missing_defaults(self, defaults=None):
         '''
         Set any missing defaults according to Settings.defaults
         '''
-        for section in Settings.defaults:
-            for setting in Settings.defaults[section]:
+        if not defaults:
+            defaults = Settings.defaults
+        for section in defaults:
+            for setting in defaults[section]:
                 if not self._config.has_option(section, setting):
-                    self.set(setting, Settings.defaults[section][setting], section)
+                    self.set(setting, defaults[section][setting], section)
 
     def get(self, setting, section = default_section):
         '''
@@ -91,5 +92,5 @@ class Settings(object):
         if not filename:
             filename = self._configfile
         self._config.read(filename)
-        self.set_missing_defaults()
+        self.set_missing_defaults(self._defaults)
     

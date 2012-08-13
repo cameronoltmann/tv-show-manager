@@ -5,7 +5,7 @@ from src.settings import Settings
 class TestSettings(object):
     
     def setup(self):
-        self.settings = Settings('test_settings.cfg')
+        self.settings = Settings(None,'test_settings.cfg')
     
     def test_set_and_read(self):
         section = 'Test'

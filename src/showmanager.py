@@ -132,7 +132,15 @@ def prune_duplicates(shows):
                     prune_episode(copy[1])
                 
 if __name__ == '__main__':
-    config = Settings()
+    defaults = {Settings.default_section:
+                    {'Home' : '.',
+                     'Graveyard' : './_graveyard',
+                     'Logging' : 'True',
+                     'Logfile' : 'actions.log',
+                     'Ext' : '.avi .mpg .mkv .mp4'
+                     }
+                }
+    config = Settings(defaults)
     config.save()
     valid_ext = config.get('Ext').split()
     home = os.path.abspath(config.get('Home'))
