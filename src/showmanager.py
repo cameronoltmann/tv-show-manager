@@ -129,8 +129,8 @@ def prune_duplicates(shows):
     
     for show in shows:
         for episode in shows[show]:
-            episode.sort(cmp=compareField(2), reverse=True)
-            for copy in episode[1:]:
+            shows[show][episode].sort(cmp=compareField(2), reverse=True)
+            for copy in shows[show][episode][1:]:
                 prune_episode(copy[1])
                 
 if __name__ == '__main__':
