@@ -122,16 +122,14 @@ def prune_duplicates(shows):
     For each episode, prunes (moves to graveyard) all episodes with scores less
         than the highest for the episode
     '''
-    def compareField(field):
-        def c(l1, l2):
-            return cmp(l1[field], l2[field])
-        return c
-    
     for show in shows:
         for episode in shows[show]:
-            episode.sort(cmp=compareField(2), reverse=True)
-            for copy in episode[1:]:
-                prune_episode(copy[1])
+            max_score = 0
+            for copy in shows[show][episode]:
+                max_score = max(max_score, copy[2])
+            for copy in shows[show][episode]:
+                if copy[2]<max_score:
+                    prune_episode(copy[1])
                 
 if __name__ == '__main__':
     defaults = {Settings.default_section:
